@@ -1,0 +1,9 @@
+html, body {
+  overflow-x: hidden;
+}
+
+main.profile {
+  margin-top: 91px;
+  margin-left: 117px;
+  width: calc(100% - 117px);
+}

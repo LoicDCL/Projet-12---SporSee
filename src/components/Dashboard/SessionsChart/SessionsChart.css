@@ -1,0 +1,25 @@
+.sessions-chart {
+  background: #FF0000;
+  border-radius: 5px;
+  padding: 24px 0 0 24px;
+  width: 258px;
+  height: 263px;
+  position: relative;
+}
+
+.sessions-chart__title {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 150px;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+.sessions-tooltip {
+  background: white;
+  color: #282D30;
+  padding: 6px 8px;
+  font-size: 12px;
+  font-weight: 500;
+}

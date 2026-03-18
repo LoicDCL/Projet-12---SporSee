@@ -1,0 +1,49 @@
+.score-chart {
+  background: #FBFBFB;
+  border-radius: 5px;
+  width: 258px;
+  height: 263px;
+  padding: 24px;
+  position: relative;
+}
+
+.score-chart__title {
+  font-size: 15px;
+  font-weight: 500;
+  color: #20253A;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
+.score-chart__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-chart__center {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.score-chart__percent {
+  font-size: 26px;
+  font-weight: 700;
+  color: #282D30;
+}
+
+.score-chart__label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #74798C;
+  line-height: 1.4;
+  margin-top: 4px;
+}

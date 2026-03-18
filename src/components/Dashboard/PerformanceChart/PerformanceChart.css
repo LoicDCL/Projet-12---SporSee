@@ -1,0 +1,10 @@
+.performance-chart {
+  background: #282D30;
+  border-radius: 5px;
+  width: 258px;
+  height: 263px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}

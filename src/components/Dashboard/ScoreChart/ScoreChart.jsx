@@ -19,13 +19,13 @@ function ScoreChart({ score }) {
     <div className="score-chart">
       <h2 className="score-chart__title">Score</h2>
       <div className="score-chart__wrapper">
-        <ResponsiveContainer width="100%" height={200}>
+        <ResponsiveContainer width="100%" height="100%">
           <RadialBarChart
             data={data}
             startAngle={210}
             endAngle={-150}
-            innerRadius={70}
-            outerRadius={90}
+            innerRadius="50%"
+            outerRadius="70%"
           >
             <RadialBar dataKey="value" cornerRadius={10} />
           </RadialBarChart>

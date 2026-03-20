@@ -27,14 +27,16 @@ CustomTooltip.propTypes = {
 }
 
 const CustomCursor = ({ points, width, height }) => {
-  const { x } = points[0]
+  if (!points || !points[0]) return null
+  const { x, y } = points[0]
+  console.log('x:', x, 'y:', y, 'width:', width, 'height:', height)
   return (
     <Rectangle
-      fill="rgba(0,0,0,0.1)"
+      fill="rgba(0,0,0,0.2)"
       x={x}
       y={0}
-      width={width - x + 60}
-      height={height + 60}
+      width={width}
+      height={450}
     />
   )
 }
@@ -49,19 +51,21 @@ function SessionsChart({ data }) {
   return (
     <div className="sessions-chart">
       <h2 className="sessions-chart__title">Durée moyenne des sessions</h2>
-      <ResponsiveContainer width="100%" height={180}>
-        <LineChart data={data} margin={{ top: 0, right: 30, left: 10, bottom: 10 }}>
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart data={data} margin={{ top: 50, right: -15, left: -50, bottom: 10 }}>
           <XAxis
             dataKey="day"
             tickLine={false}
             axisLine={false}
-            tick={{ fill: 'rgba(255,255,255,0.5)', fontSize: 12 }}
+            tick={{ fill: 'rgba(255,255,255,0.5)', fontSize: '0.8vw' }}
             interval={0}
+            tickFormatter={(value) => value === '' ? '' : value}
           />
-          <YAxis hide domain={['dataMin - 10', 'dataMax + 30']} />
+          <YAxis hide domain={['dataMin - 5', 'dataMax + 20']} />
           <Tooltip
             content={<CustomTooltip />}
             cursor={<CustomCursor />}
+            position={{ y: 50 }}
           />
           <Line
             type="monotone"

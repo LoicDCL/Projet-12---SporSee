@@ -1,19 +1,21 @@
 .activity-chart {
   background: #FBFBFB;
   border-radius: 5px;
-  padding: 24px 26px 16px;
+  padding: 2vh 0vw 2vw 3vh;
   width: 100%;
+  height: clamp(150px, 31vh, 300px);
+  overflow: hidden;
 }
 
 .activity-chart__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 1vh;
 }
 
 .activity-chart__title {
-  font-size: 15px;
+  font-size: 1vw;
   font-weight: 500;
   color: #20253A;
 }
@@ -21,11 +23,30 @@
 .activity-tooltip {
   background: #E60000;
   color: white;
-  padding: 8px 12px;
-  font-size: 12px;
+  padding: 0.8vh 0.8vw;
+  font-size: 0.9vw;
   font-weight: 500;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 1vh;
   text-align: center;
 }
+
+.activity-chart__legend {
+  display: flex;
+  gap: 2vw;
+  align-items: center;
+  font-size: 1vw;
+  color: #74798C;
+}
+
+.activity-chart__dot {
+  display: inline-block;
+  width: 0.6vw;
+  height: 0.6vw;
+  border-radius: 50%;
+  margin-right: 0.5vw;
+}
+
+.activity-chart__dot.dark { background: #282D30; }
+.activity-chart__dot.red  { background: #E60000; }

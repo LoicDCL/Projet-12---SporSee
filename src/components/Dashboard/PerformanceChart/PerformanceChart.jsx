@@ -11,12 +11,12 @@ import './PerformanceChart.css'
 function PerformanceChart({ data }) {
   return (
     <div className="performance-chart">
-      <ResponsiveContainer width="100%" height={263}>
-        <RadarChart data={data} outerRadius={90}>
+      <ResponsiveContainer width="100%" height="100%">
+        <RadarChart data={data} outerRadius="65%">
           <PolarGrid radialLines={false} stroke="white" />
           <PolarAngleAxis
             dataKey="kind"
-            tick={{ fill: 'white', fontSize: 12 }}
+            tick={{ fill: 'white', fontSize: '0.8vw' }}
             tickLine={false}
             axisLine={false}
           />

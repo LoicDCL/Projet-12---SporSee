@@ -24,24 +24,37 @@ export function formatActivityData(data) {
 
 export function formatAverageSessionsData(data) {
   const dayLabels = ['L', 'M', 'M ', 'J', 'V', 'S', 'D']
-  return data.sessions.map((session) => ({
+  const sessions = data.sessions.map((session) => ({
     day: dayLabels[session.day - 1],
     sessionLength: session.sessionLength,
   }))
+
+  return [
+  { day: '', sessionLength: sessions[0].sessionLength },
+  { day: '', sessionLength: sessions[0].sessionLength },
+  ...sessions,
+  { day: '', sessionLength: sessions[sessions.length - 1].sessionLength },
+  ]
 }
 
 export function formatPerformanceData(data) {
   const kindTranslations = {
-    cardio: 'Cardio',
-    energy: 'Energie',
-    endurance: 'Endurance',
-    strength: 'Force',
-    speed: 'Vitesse',
-    intensity: 'Intensité',
+    intensity:  'Intensité',
+    speed:      'Vitesse',
+    strength:   'Force',
+    endurance:  'Endurance',
+    energy:     'Energie',
+    cardio:     'Cardio',
   }
 
-  return data.data.map((item) => ({
+  const order = ['intensity', 'speed', 'strength', 'endurance', 'energy', 'cardio']
+
+  const formatted = data.data.map((item) => ({
     value: item.value,
-    kind: kindTranslations[data.kind[item.kind]] || data.kind[item.kind],
+    kind:  kindTranslations[data.kind[item.kind]],
   }))
+
+  return order.map((key) =>
+    formatted.find((item) => item.kind === kindTranslations[key])
+  )
 }

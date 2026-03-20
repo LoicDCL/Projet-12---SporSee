@@ -34,11 +34,15 @@ function ActivityChart({ data }) {
     <div className="activity-chart">
       <div className="activity-chart__header">
         <h2 className="activity-chart__title">Activité quotidienne</h2>
+        <div className="activity-chart__legend">
+          <span><i className="activity-chart__dot dark"></i>Poids (kg)</span>
+          <span><i className="activity-chart__dot red"></i>Calories brûlées (kCal)</span>
+        </div>
       </div>
-      <ResponsiveContainer width="100%" height={200}>
+      <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={data}
-          margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+          margin={{ top: 20, right: 0, left: 0, bottom: 5 }}
           barGap={8}
         >
           <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#DEDEDE" />
@@ -46,14 +50,14 @@ function ActivityChart({ data }) {
             dataKey="day"
             tickLine={false}
             axisLine={false}
-            tick={{ fill: '#9B9EAC', fontSize: 14 }}
+            tick={{ fill: '#9B9EAC', fontSize: '1vw' }}
           />
           <YAxis
             yAxisId="kg"
             orientation="right"
             tickLine={false}
             axisLine={false}
-            tick={{ fill: '#9B9EAC', fontSize: 14 }}
+            tick={{ fill: '#9B9EAC', fontSize: '1vw' }}
             domain={['dataMin - 1', 'dataMax + 1']}
           />
           <YAxis yAxisId="cal" orientation="left" hide />
@@ -63,16 +67,8 @@ function ActivityChart({ data }) {
             position={{ y: -20 }}
             offset={40}
           />
-          <Legend
-            verticalAlign="top"
-            align="right"
-            iconType="circle"
-            iconSize={8}
-            wrapperStyle={{ paddingBottom: '30px' }}
-            formatter={(value) => (value === 'kilogram' ? 'Poids (kg)' : 'Calories brûlées (kCal)')}
-          />
-          <Bar yAxisId="kg"  dataKey="kilogram" fill="#282D30" radius={[3,3,0,0]} name="kilogram" barSize={7} />
-          <Bar yAxisId="cal" dataKey="calories"  fill="#E60000" radius={[3,3,0,0]} name="calories"  barSize={7} />
+          <Bar yAxisId="kg"  dataKey="kilogram" fill="#282D30" radius={[3,3,0,0]} name="kilogram" barSize={5} />
+          <Bar yAxisId="cal" dataKey="calories"  fill="#E60000" radius={[3,3,0,0]} name="calories"  barSize={5} />
         </BarChart>
       </ResponsiveContainer>
     </div>

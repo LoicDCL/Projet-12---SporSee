@@ -1,19 +1,17 @@
 .score-chart {
   background: #FBFBFB;
   border-radius: 5px;
-  width: 258px;
-  height: 263px;
-  padding: 24px;
+  padding: 2vh 1.5vw;
   position: relative;
 }
 
 .score-chart__title {
-  font-size: 15px;
+  font-size: 1.2vw;
   font-weight: 500;
   color: #20253A;
   position: absolute;
-  top: 24px;
-  left: 24px;
+  top: 2vh;
+  left: 1.5vw;
 }
 
 .score-chart__wrapper {
@@ -35,15 +33,15 @@
 }
 
 .score-chart__percent {
-  font-size: 26px;
+  font-size: 2vw;
   font-weight: 700;
   color: #282D30;
 }
 
 .score-chart__label {
-  font-size: 16px;
+  font-size: 1.1vw;
   font-weight: 500;
   color: #74798C;
   line-height: 1.4;
-  margin-top: 4px;
+  margin-top: 0.5vh;
 }

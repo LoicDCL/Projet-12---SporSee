@@ -1,9 +1,6 @@
-html, body {
-  overflow-x: hidden;
-}
-
 main.profile {
-  margin-top: 91px;
-  margin-left: 117px;
-  width: calc(100% - 117px);
+  margin-top: 9vh;
+  margin-left: 8vw;
+  width: calc(100% - 8vw);
+  padding: 5vh 7vw;
 }
